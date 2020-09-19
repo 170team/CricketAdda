@@ -1,0 +1,203 @@
+<ion-header>
+  <ion-toolbar style="height: 33px;">
+    <ion-title style="font-size: small; margin-bottom: 6%;">
+      Live Match
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card [ngClass]="{'batting' : batsman1.batting,
+                                    'not-batting' : !batsman1.batting}" style="margin: 3px 10px;">
+          <ion-row>
+            <ion-col size="3">
+              <!-- <ion-icon name="tennisball" style="height: 40px; width:40px;padding: 33px"></ion-icon> -->
+              <!-- <ion-icon name="tennisball"></ion-icon> -->
+              <ion-img src="assets/icon/bat-icon.png" style="padding: 10px 1px;" [ngStyle]="{'width' : batsman1.batting ? '128%' : '100%'}"></ion-img>
+            </ion-col>
+            <ion-col size="9">
+              <ion-card-header style="padding:10% 0%">
+                <ion-card-title style="text-align: center;font-size: small;">{{batsman1.batsmanName}}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content style="text-align: center;font-size: small;padding:2% 0%">
+                {{batsman1.batsmanScore}}({{batsman1.batsmanBalls}})
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" *ngIf='!addBatsman'>
+        <ion-card [ngClass]="{'batting' : batsman2.batting,
+            'not-batting' : !batsman2.batting}" style="margin: 3px 10px;">
+          <ion-row>
+            <ion-col size="3">
+              <!-- <ion-icon name="tennisball" style="height: 40px; width:40px;padding: 33px"></ion-icon> -->
+
+              <ion-img src="assets/icon/bat-icon.png" style="padding: 10px 1px;" [ngStyle]="{'width' : batsman2.batting ? '128%' : '100%'}"></ion-img>
+
+            </ion-col>
+            <ion-col size="9">
+              <ion-card-header style="padding:10% 0%">
+                <ion-card-title style="text-align: center;font-size: small;">{{batsman2.batsmanName}}</ion-card-title>
+              </ion-card-header>
+
+              <ion-card-content style="text-align: center;font-size: small;padding:2% 0%">
+                {{batsman2.batsmanScore}}({{batsman2.batsmanBalls}})
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" *ngIf='addBatsman'>
+        <ion-card [ngClass]="{'batting' : batsman2.batting,
+              'not-batting' : !batsman2.batting}" style="margin: 3px 10px;">
+          <ion-img src="assets/icon/add-yet-to-bat.png" style="width: 50%;margin:auto" (click)="newBatsmanPopUp()"></ion-img>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card style="background-color: #a29bfe;margin: 3px 10px;">
+          <ion-item style="height: 32px;">
+            <ion-label style="text-align:center;font-size: large;color: #a29bfe;font-weight: 500;margin:1%;padding-bottom: 13px;">SCORE</ion-label>
+          </ion-item>
+          <ion-card-content style="font-size: 28px;text-align:center;color:#fafaff;padding: 2%;">
+            {{teamScore}}-{{wicketCount}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card style="margin: 3px 10px;">
+          <ion-row>
+            <ion-col size="5" style="background-color:#a29bfe;color:white;padding:5px 24px;">Last over runs</ion-col>
+            <!-- <ion-col size="7">0 0 0 2 3 5</ion-col> -->
+            <ion-col size="7">{{lastOver}}</ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card style="margin: 3px 10px;text-align:center">
+          <!-- <ion-card style="margin: 3px 10px;padding:8px; text-align:center"> -->
+          <ion-row>
+            <ion-col size="5" style="background-color:#a29bfe;color:white;padding:5px 24px;">Present over</ion-col>
+            <div *ngFor="let run of presentOver" class="ball">
+              {{run}}
+            </div>
+          </ion-row>
+          <!-- <div style="border: 2px solid black;border-radius: 50%;"></div> -->
+          <!-- <ion-icon name="tennisball" style="width: 40px;height: 40px; color:#4cd137">1</ion-icon>
+          <ion-icon name="tennisball" style="width: 40px;height: 40px; color:#4cd137"></ion-icon>
+          <ion-icon name="tennisball" style="width: 40px;height: 40px; color:#4cd137"></ion-icon>
+          <ion-icon name="tennisball" style="width: 40px;height: 40px; color:#4cd137"></ion-icon>
+          <ion-icon name="tennisball" style="width: 40px;height: 40px; color:#4cd137"></ion-icon>
+          <ion-icon name="tennisball" style="width: 40px;height: 40px; color:#4cd137"></ion-icon> -->
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card style="margin: 3px 10px;text-align:center">
+          <!-- <ion-card style="margin: 3px 10px;padding:8px; text-align:center"> -->
+          <ion-row>
+            <ion-col size="5" style="background-color:#a29bfe;color:white;padding:5px 24px;">Bowler</ion-col>
+              {{presentBowler}} 
+          </ion-row>
+        </ion-card>
+        <!-- <ion-card style="margin: 3px 10px;padding:8px;">
+          <!-- <ion-card-content> -->
+        <!-- Bowler :  -->
+        <!-- </ion-card-content> -->
+        <!-- </ion-card> -->
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+
+<!-- <ion-grid> -->
+<ion-row>
+  <ion-col>
+    <ion-button shape="round" (click)="runs(0, false)">.</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button shape="round" (click)="runs(1, true)">1</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button shape="round" (click)="runs(2, false)">2</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button shape="round" (click)="runs(3, true)">3</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button expand="block" (click)="moreRuns()">3+</ion-button>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col size='5'>
+    <ion-button shape="round" color="success" style="width:100%" size="medium" fill="outline" (click)="runs(4, false)">4</ion-button>
+  </ion-col>
+  <ion-col size='4'>
+    <ion-button shape="round" color="tertiary" style="width:100%" size="medium" fill="outline" (click)="runs(6, false)">6</ion-button>
+  </ion-col>
+  <ion-col size='3'>
+    <ion-button shape="round" color="danger" style="width:100%" size="medium" fill="outline" (click)="runs(-1, -1)">W</ion-button>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col>
+    <ion-button expand="block" (click)="extras()">Extras</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button expand="block">Dead ball</ion-button>
+  </ion-col>
+</ion-row>
+
+
+
+<!-- <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      {{item.title}}
+      <div class="item-note" slot="end">
+        {{item.note}}
+      </div>
+    </ion-item>
+  </ion-list> -->
+<!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+ 
+</ion-content> -->
+
+
+
+<!-- <ion-card>
+  <ion-item href="#" class="activated">
+    <ion-icon name="wifi" slot="start"></ion-icon>
+    <ion-label>Card Link Item 1 .activated</ion-label>
+  </ion-item>
+
+  <ion-item href="#">
+    <ion-icon name="wine" slot="start"></ion-icon>
+    <ion-label>Card Link Item 2</ion-label>
+  </ion-item>
+
+  <ion-item class="activated">
+    <ion-icon name="warning" slot="start"></ion-icon>
+    <ion-label>Card Button Item 1 .activated</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="walk" slot="start"></ion-icon>
+    <ion-label>Card Button Item 2</ion-label>
+  </ion-item>
+</ion-card> -->
+<!-- <ion-popover-controller></ion-popover-controller>
+        <ion-button slot="end">Show</ion-button> -->

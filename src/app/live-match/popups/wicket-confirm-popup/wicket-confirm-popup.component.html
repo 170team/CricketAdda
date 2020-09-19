@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <ion-title>CONFIRM LOST WICKET</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="4">
+      <ion-card (click)="closeModal(true)">
+        <ion-img src="assets/icon/wicket-gone.png" style="width:65%;" class = "center"></ion-img>
+        <p class="text-center">Bowled!</p>
+      </ion-card>
+
+    </ion-col>
+    <ion-col size="4">
+      <ion-card (click)="closeModal('caught-page-cricAdda')">
+        <ion-img src="assets/icon/caught.png" style="width:77%;" class = "center"></ion-img>
+        <p class="text-center">Caught</p>
+      </ion-card>
+
+    </ion-col>
+    <ion-col size="4">
+      <ion-card (click)="closeModal('true')">
+        <ion-img src="assets/icon/LBW.png" style="width:100%;" class = "center"></ion-img>
+        <p class="text-center">LBW</p>
+      </ion-card>
+
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4">
+      <ion-card (click)="closeModal('runout-page-cricAdda')">
+        <ion-img src="assets/icon/runout.png" style="width:80%;" class = "center"></ion-img>
+        <p class="text-center">Runout</p>
+      </ion-card>
+      
+    </ion-col>
+    <ion-col size="4">
+      <ion-card style="position:absolute; top:17%;width: 75%;">
+        <!-- <ion-img src="assets/icon/wicket-gone.png"  style="width:65%;" class = "center"></ion-img> -->
+        <p class="text-center">{{strictbatsman.batsmanName}}</p>
+        <p class= "text-center">{{strictbatsman.batsmanScore}}({{strictbatsman.batsmanBalls}})</p> 
+      </ion-card>
+      
+    </ion-col>
+    <ion-col size="4">
+      <ion-card (click)="closeModal('true')">
+        <ion-img src="assets/icon/handled-the-ball.png" style="width:87%;" class = "center"></ion-img>
+        <p class="text-center">Handled the ball</p>
+      </ion-card>
+      
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4">
+      <ion-card (click)="closeModal('true')">
+        <ion-img src="assets/icon/hit-wicket.png" style="width:149%;" class = "center"></ion-img>
+        <p class="text-center">Hit Wicket</p>
+      </ion-card>
+
+    </ion-col>
+    <ion-col size="4">
+      <ion-card (click)="closeModal('true')">
+        <ion-img src="assets/icon/stumped.png" style="width:111%;" class = "center"></ion-img>
+        <p class="text-center">Stumped</p>
+      </ion-card>
+
+    </ion-col>
+    <ion-col size="4">
+      <ion-card (click)="closeModal('true')">
+        <ion-img src="assets/icon/timedout.png" style="width:139%;" class = "center"></ion-img>
+        <p class="text-center">Timed out</p>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+        <ion-button (click)="closeModal(false)" class="center-button-notout">{{strictbatsman.batsmanName}} NOT OUT!</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Select Player</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+<ion-grid>
+    <ion-row>
+      <ion-col *ngFor='let player of players; index as i' size="6">
+        <ion-card class="welcome-card" (click) = 'selectedBatsman(i)' [ngClass] = "{'player-selected': player.select}">
+          <div>
+          <img src="/assets/icon/players-icon/avatar-1.png" alt="" style="width: 100%; margin: 2% auto;border-radius:50%;" />
+  
+          <ion-card-header>{{player.displayName}}
+            <ion-card-title style="text-align: center;">{{player.displayName}}</ion-card-title>
+          </ion-card-header>
+        </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+</ion-grid>
+<ion-button (click)="addSelectedPlayers()">Add selected Players</ion-button>
+</ion-content>
+
+<!-- <p>select</p> -->

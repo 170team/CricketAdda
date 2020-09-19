@@ -1,0 +1,23 @@
+@font-face {
+    font-family: poppins-cric;
+    src: url(../../assets/fonts/Poppins-Light.ttf);
+}
+
+.batting {
+    background-color: #55efc4;
+}
+
+.not-batting {
+    background-color: #d0f3e9;
+}
+
+.ball {
+    border: 2px solid grey;
+    border-radius: 50%;
+    padding: 4px;
+    margin:2px;
+    background-color:#94e637;
+}
+
+
+

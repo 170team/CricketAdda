@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="bg-img">
+      
+      </div>
+      <form (ngSubmit)="registerForm()" class="continer">
+          <ion-item style="padding: 10px 5px;">
+              <ion-label position="floating">User name</ion-label>
+              <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item style="padding: 10px 5px;">
+              <ion-label position="floating">Password</ion-label>
+              <ion-input type="password"></ion-input>
+          </ion-item>
+          <ion-item style="padding: 10px 5px;">
+            <ion-label position="floating">confirm password</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+          <ion-item style="padding: 10px 5px;">
+            <ion-label position="floating">Player Name</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item style="padding: 10px 5px;">
+              <ion-label position="floating">Alias Name</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>User Type</ion-label>
+                <ion-select multiple="true" cancelText="Nah" okText="Okay!">
+                  <ion-select-option value="bacon">Viewer</ion-select-option>
+                  <ion-select-option value="olives">Player</ion-select-option>
+                  <ion-select-option value="xcheese">Umpire</ion-select-option>
+                </ion-select>
+              </ion-item>
+            <ion-item style="padding: 10px 5px;">
+              <ion-label position="floating">Place</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+          <ion-button color="success" type="submit" expand="block">Register</ion-button>
+        </form>
+
+</ion-content>

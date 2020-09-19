@@ -1,0 +1,28 @@
+.bg-img {
+    background-image:url("../../assets/icon/login/register-1.png");
+    min-height: 550px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.continer {
+    // background-image:url("../../assets/icon/players-icon/login-4.png");
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    position: absolute;
+    right: 23px;
+    top: 0px;
+    margin: 20px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4);
+    // background-color: transparent;
+    border: 1px dashed #f1f1f1;
+    // transform: translate(-50%, -50%);
+  z-index: 2;
+}

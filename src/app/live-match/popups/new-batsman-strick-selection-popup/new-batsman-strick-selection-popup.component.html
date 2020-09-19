@@ -1,0 +1,24 @@
+
+
+          <ion-header>
+              <ion-toolbar text-center>
+                <ion-title>NEW BASTMAN STRICK SELECTION</ion-title>
+              </ion-toolbar>
+            </ion-header>
+            
+            <ion-content>
+              <div>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-card>
+                      <ion-card-header>
+                        <ion-card-title style="text-align: center;font-size: -webkit-xxx-large;">{{newBatsmanName}}</ion-card-title>
+                      </ion-card-header>
+                      <ion-button (click)="strickSelection(true)" expand>STRICKER END</ion-button>
+                      <ion-img src="assets/icon/striking-selection.png" style="padding: 33px 1px;"></ion-img>
+                      <ion-button (click)="strickSelection(false)">NON STRICKER END</ion-button>
+                    </ion-card>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </ion-content>

@@ -1,0 +1,177 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card [ngClass]="{'batting' : batsman1.batting,
+                                    'not-batting' : !batsman1.batting}">
+          <ion-row>
+            <ion-col size="3">
+              <!-- <ion-icon name="tennisball" style="height: 40px; width:40px;padding: 33px"></ion-icon> -->
+              <!-- <ion-icon name="tennisball"></ion-icon> -->
+              <ion-img src="assets/icon/bat-icon.png" style="padding: 33px 1px;" [ngStyle]="{'width' : batsman1.batting ? '128%' : '100%'}"></ion-img>
+            </ion-col>
+            <ion-col size="9">
+              <ion-card-header>
+                <ion-card-title>Sachin</ion-card-title>
+              </ion-card-header>
+              <ion-card-content style="font-size:20px">
+                {{batsman1.batsmanScore}}({{batsman1.batsmanBalls}})
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card [ngClass]="{'batting' : batsman2.batting,
+            'not-batting' : !batsman2.batting}">
+          <ion-row>
+            <ion-col size="3">
+              <!-- <ion-icon name="tennisball" style="height: 40px; width:40px;padding: 33px"></ion-icon> -->
+
+              <ion-img src="assets/icon/bat-icon.png" style="padding: 33px 1px;" [ngStyle]="{'width' : batsman2.batting ? '128%' : '100%'}"></ion-img>
+
+            </ion-col>
+            <ion-col size="9">
+              <ion-card-header>
+                <ion-card-title>Sehwag</ion-card-title>
+              </ion-card-header>
+
+              <ion-card-content style="font-size:20px">
+                {{batsman2.batsmanScore}}({{batsman2.batsmanBalls}})
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card style="background-color: #a29bfe;">
+          <ion-item>
+            <ion-label style="text-align:center;font-size: x-large;color: #a29bfe;font-weight: 500;">SCORE</ion-label>
+          </ion-item>
+          <ion-card-content style="font-size:60px;text-align:center;color:#fafaff;">
+            {{teamScore}}-1
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card style="padding:8px; ">
+          <div style="overflow-x: auto;">
+            0 2 3 5 | 1 3 6 0 2 0 | wd 0 W 1 3 0 | 0 0 0 2 3 5 | 1 3
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+
+      <ion-col>
+        <ion-card style="padding:8px; text-align:center">
+          <ion-icon name="tennisball" style="width: 40px;height: 40px; color:#4cd137">1</ion-icon>
+          <ion-icon name="tennisball" style="width: 40px;height: 40px; color:#4cd137"></ion-icon>
+          <ion-icon name="tennisball" style="width: 40px;height: 40px; color:#4cd137"></ion-icon>
+          <ion-icon name="tennisball" style="width: 40px;height: 40px; color:#4cd137"></ion-icon>
+          <ion-icon name="tennisball" style="width: 40px;height: 40px; color:#4cd137"></ion-icon>
+          <ion-icon name="tennisball" style="width: 40px;height: 40px; color:#4cd137"></ion-icon>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card style="padding:8px;">
+          <ion-card-content>
+            Bowler : Shami 4(1.2)
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </div>
+</ion-content>
+
+<!-- <ion-grid> -->
+<ion-row>
+  <ion-col>
+    <ion-button shape="round" (click)="runs(1, true)">1</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button shape="round" (click)="runs(2, false)">2</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button shape="round" (click)="runs(3, true)">3</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button expand="block">5/7</ion-button>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col>
+    <ion-button shape="round" (click)="runs(4, false)">4</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button shape="round" (click)="runs(6, false)">6</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button shape="round" (click)="openModal()">W</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button expand="block">Nb/lb</ion-button>
+  </ion-col>
+</ion-row>
+<!-- </ion-grid> -->
+
+
+<!-- <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      {{item.title}}
+      <div class="item-note" slot="end">
+        {{item.note}}
+      </div>
+    </ion-item>
+  </ion-list> -->
+<!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+ 
+</ion-content> -->
+
+
+
+<!-- <ion-card>
+  <ion-item href="#" class="activated">
+    <ion-icon name="wifi" slot="start"></ion-icon>
+    <ion-label>Card Link Item 1 .activated</ion-label>
+  </ion-item>
+
+  <ion-item href="#">
+    <ion-icon name="wine" slot="start"></ion-icon>
+    <ion-label>Card Link Item 2</ion-label>
+  </ion-item>
+
+  <ion-item class="activated">
+    <ion-icon name="warning" slot="start"></ion-icon>
+    <ion-label>Card Button Item 1 .activated</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="walk" slot="start"></ion-icon>
+    <ion-label>Card Button Item 2</ion-label>
+  </ion-item>
+</ion-card> -->
+<!-- <ion-popover-controller></ion-popover-controller>
+        <ion-button slot="end">Show</ion-button> -->

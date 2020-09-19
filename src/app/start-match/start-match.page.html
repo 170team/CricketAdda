@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>start-match</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size='3'></ion-col>
+    <ion-col size='6'>
+      <ion-card class="welcome-card" (click)="openTeamsListA()">
+        <img src="/assets/icon/start-match/team-A.png" alt="" style="width:30%; margin: 2% auto;" />
+
+        <ion-card-header>
+          <!-- <ion-card-subtitle>Get Started</ion-card-subtitle> -->
+          <ion-card-title style="text-align: center;font-size: small;">Team-A</ion-card-title>
+          <ion-card-title style="text-align: center;font-size: small;">{{teamDetailsA.teamName}}</ion-card-title>
+
+        </ion-card-header>
+        <!-- <ion-card-content>
+        <p>Players stuff</p>
+      </ion-card-content> -->
+
+      </ion-card>
+    </ion-col>
+    <ion-col size='3'></ion-col>
+  </ion-row>
+  <ion-row>
+    <img src="/assets/icon/start-match/versus.png" alt="" style="width: 73px;margin: 2% auto;height: 57px;" />
+  </ion-row>
+  <ion-row>
+    <ion-col size='3'></ion-col>
+    <ion-col size='6'>
+      <ion-card class="welcome-card" (click)="openTeamsListB()">
+        <img src="/assets/icon/start-match/team-B.png" alt="" style="width:51%; margin: 2% auto;" />
+
+        <ion-card-header>
+          <!-- <ion-card-subtitle>Get Started</ion-card-subtitle> -->
+          <ion-card-title style="text-align: center;font-size: small;">Team-B</ion-card-title>
+          <ion-card-title style="text-align: center;font-size: small;">{{teamDetailsB.teamName}}</ion-card-title>
+        </ion-card-header>
+        <!-- <ion-card-content>
+          <p>Players stuff</p>
+        </ion-card-content> -->
+
+      </ion-card>
+    </ion-col>
+    <ion-col size='3'></ion-col>
+  </ion-row>
+
+  <ion-row>
+
+    <ion-col>
+      <div *ngIf="isTeamSelected; then thenBlock; else elseBlock"></div>
+      <ng-template #elseBlock>
+        <ion-button expand="block" color='success' (click)="tossSelection()" [disabled]="!isTeamBSelected">Toss</ion-button>
+      </ng-template>
+      <ng-template #thenBlock>
+        <p>Toss won By {{tossWonBy.teamName}} selected to {{tossWonTeamSelectedType}}</p>
+      </ng-template>
+    </ion-col>
+
+  </ion-row>
+  <ion-row>
+
+    <ion-col>
+
+      <ion-button expand="block" color='success' (click)="prepareForMatch()" [disabled]="!prepareForMatchV">Prepare for match</ion-button>
+
+    </ion-col>
+
+  </ion-row>
+  <ion-row>
+
+      <ion-col>
+  
+        <ion-button expand="block" color='success' (click)="startMatch()" [disabled]="prepareForMatchV">Start match</ion-button>
+  
+      </ion-col>
+  
+    </ion-row>
+  <ion-row>
+    <ion-col size='4'></ion-col>
+    <ion-col size='4'>
+    </ion-col>
+    <ion-col size='4'>
+      <ion-button (click)="reset()">Reset</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-button routerLink="../tabs/live-match">start match</ion-button>
+</ion-content>

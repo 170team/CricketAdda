@@ -1,2 +1,2 @@
 # CricketAdda
-CricketAdda - UI
+CricketApp

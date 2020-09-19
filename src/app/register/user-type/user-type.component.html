@@ -1,0 +1,70 @@
+<ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card class="welcome-card" (click)="userType('cric-adda-viewer')" id="cric-adda-viewer-id">
+           
+          <img src="/assets/icon/login/viewers.png" alt="" style="width: 45%; margin: 2% auto;"/>
+          
+          <ion-card-header>
+            <!-- <ion-card-subtitle>Get Started</ion-card-subtitle> -->
+            <ion-card-title style="text-align: center;font-size: small;">Viewer</ion-card-title>
+          </ion-card-header>
+          <!-- <ion-card-content>
+            <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
+          </ion-card-content> -->
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="welcome-card" (click)="userType('cric-adda-player')" id="cric-adda-player-id">
+          <img src="/assets/icon/login/player.png" alt="" style="width: 45%; margin: 2% auto;"/>
+          <ion-card-header>
+            <!-- <ion-card-subtitle>Get Started</ion-card-subtitle> -->
+            <ion-card-title style="text-align: center;font-size: small;">Player</ion-card-title>
+          </ion-card-header>
+          <!-- <ion-card-content>
+            <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
+          </ion-card-content> -->
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card class="welcome-card" [routerDirection]="'root'" [routerLink]="'../player-home'">
+          <img src="/assets/icon/tournment-icon.png" alt="" style="width: 51%; margin: 2% auto;"/>
+          <ion-card-header>
+            <!-- <ion-card-subtitle>Get Started</ion-card-subtitle> -->
+            <ion-card-title style="text-align: center;font-size: small;">Tournment's</ion-card-title>
+          </ion-card-header>
+          <!-- <ion-card-content>
+            <p>Tournment information</p>
+          </ion-card-content> -->
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="welcome-card"  [routerDirection]="'root'" [routerLink]="'../player-home'">
+          <img src="/assets/icon/player-icon.png" alt="" style="width: 51%; margin: 2% auto;"/>
+          <ion-card-header>
+            <!-- <ion-card-subtitle>Get Started</ion-card-subtitle> -->
+            <ion-card-title style="text-align: center;font-size: small;">Player's</ion-card-title>
+          </ion-card-header>
+          <!-- <ion-card-content>
+            <p>Players stuff</p>
+          </ion-card-content> -->
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="welcome-card" [routerDirection]="'root'" [routerLink]="'../tabs'">
+          <img src="/assets/icon/live-match-icon.png" alt="" style="width: 51%; margin: 2% auto;"/>
+          
+          <ion-card-header>
+            <!-- <ion-card-subtitle>Get Started</ion-card-subtitle> -->
+            <ion-card-title style="text-align: center;font-size: small;">Live Match</ion-card-title>
+          </ion-card-header>
+          <!-- <ion-card-content>
+            <p>Players stuff</p>
+          </ion-card-content> -->
+        
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>

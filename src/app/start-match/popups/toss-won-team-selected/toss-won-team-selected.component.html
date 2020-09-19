@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Select</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-row>
+      <ion-col size='2'></ion-col>
+      <ion-col>
+        <ion-button (click)="selected('batting')">Batting</ion-button>
+      </ion-col>
+      <ion-col size='2'></ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col size='2'></ion-col>
+      <ion-col>
+        <ion-card class="welcome-card">
+          <img src="/assets/icon/start-match/toss.png" alt="" style="width:50%; margin: 2% auto;" />
+        </ion-card>
+      </ion-col>
+      <ion-col size='2'></ion-col>
+    </ion-row> -->
+    <ion-row>
+      <ion-col size='3'></ion-col>
+      <ion-col size='6'>
+        <ion-button (click)="selected('bowling')">Bowling</ion-button>
+      </ion-col>
+      <ion-col size='3'></ion-col>
+    </ion-row>
+  </ion-content>

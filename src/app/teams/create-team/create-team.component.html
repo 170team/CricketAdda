@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Match</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <form class="continer"> -->
+  <ion-item style="padding: 10px 5px;">
+    <ion-label position="floating">Team Name</ion-label>
+    <ion-input type="text"  id="teamName" [value]="teamName" (input)="teamName = $event.target.value"></ion-input>
+  </ion-item>
+  <ion-item style="padding: 10px 5px;">
+    <ion-label position="floating">Upload image</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-button color="success" type="submit" expand="block" (click)="selectPlayers()">Add Players</ion-button>
+  <ion-button color="success" type="submit" expand="block" (click)="createTeam()">create team</ion-button>
+  <!-- </form> -->
+  <!-- <ion-card>
+    <ion-card-header>Players Selected</ion-card-header> -->
+    <ion-list style="overflow:auto">
+      <ion-list-header>
+          Players Selected
+          </ion-list-header>
+
+      <ion-item *ngFor="let player of selectPlayersArray">
+        <ion-avatar slot="start">
+          <img src="assets/icon/players-icon/avatar-1.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{player.userName}}</h2>
+          <!-- <p>Listen, I've had a pretty messed up day...</p> -->
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  <!-- </ion-card> -->
+</ion-content>

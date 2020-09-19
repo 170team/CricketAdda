@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="bg-img">
+      
+  </div>
+  <form (ngSubmit)="logForm()" class="continer">
+    <ion-item style="padding: 10px 5px;">
+      <ion-label position="floating">User name</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item style="padding: 10px 5px;">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-button color="success" type="submit" expand="block">Login</ion-button>
+  </form>
+  <ion-button style = "position:absolute; right : 29px; top: 412px" [routerDirection]="'root'" [routerLink]="'../register'">Not a member</ion-button>
+
+</ion-content>

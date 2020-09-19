@@ -1,0 +1,33 @@
+<ion-row>
+  <ion-col>
+    <ion-card style="text-align: center;">
+      <!-- <ion-img src="assets/icon/wicket-gone.png"  style="width:65%;" class = "center"></ion-img> -->
+      <p class="text-center">{{strictbatsman.batsmanName}}</p>
+      <p class="text-center">{{strictbatsman.batsmanScore}}({{strictbatsman.batsmanBalls}})</p>
+    </ion-card>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-card class="welcome-card">
+    <ion-card-header style="text-align: center;">{{outType}}</ion-card-header>
+    <ion-row>
+      <div style="overflow:auto">
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor='let player of players; index as i' size="6">
+              <ion-card class="welcome-card" (click)='caughtBy(player)'>
+
+                <img src="/assets/icon/players-icon/avatar-1.png" alt="" style="width: 100%; margin: 2% auto;border-radius:50%;" />
+
+                <ion-card-header>
+                  <!-- <ion-card-subtitle>Get Started</ion-card-subtitle> -->
+                  <ion-card-title style="text-align: center;">{{player.name}}</ion-card-title>
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-row>
+  </ion-card>
+</ion-row>

@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Prepare For Match</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <h4>Batting by {{matchDetails.batting.teamName}}</h4>
+    <ion-col size='3'></ion-col>
+    <ion-col size='6'>
+      <ion-card style="background-color: #a29bfe;margin: 3px 10px;">
+        <ion-item style="height: 32px;">
+          <ion-label style="text-align:center;font-size: large;color: #a29bfe;font-weight: 500;margin:1%;padding-bottom: 13px;">Openers</ion-label>
+        </ion-item>
+        <ion-button (click)="newBatsmanPopUp('stricker')">Stricker</ion-button>
+        <ion-button (click)="newBatsmanPopUp('nonstricker')">Non-stricker</ion-button>
+      </ion-card>
+      <!-- <ion-card class="welcome-card" (click)="openTeamsListA()">
+        <img src="/assets/icon/start-match/team-A.png" alt="" style="width:30%; margin: 2% auto;" />
+
+        <ion-card-header>
+          <ion-card-title style="text-align: center;font-size: small;">Team-A</ion-card-title>
+          <ion-card-title style="text-align: center;font-size: small;">{{teamDetailsA.teamName}}</ion-card-title>
+
+        </ion-card-header>
+      
+
+      </ion-card> -->
+    </ion-col>
+    <ion-col size='3'></ion-col>
+  </ion-row>
+  <ion-row>
+    <h4>Bowling by {{matchDetails.bowling.teamName}}</h4>
+    <ion-col size='3'></ion-col>
+    <ion-col size='6'>
+      <ion-button (click)="nextBowlerSelection()">Bowler</ion-button>
+    </ion-col>
+    <ion-col size='3'></ion-col>
+  </ion-row>
+  <ion-row>
+    <h6>Stricker</h6>
+    <ion-list style="overflow:auto">
+      <ion-list-header>
+        Stricker
+      </ion-list-header>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/icon/players-icon/avatar-1.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{stricker.name}}</h2>
+          <!-- <p>Listen, I've had a pretty messed up day...</p> -->
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-row>
+  <ion-row>
+    <h6>Non Stricker</h6>
+
+    <ion-avatar slot="start">
+      <img src="assets/icon/players-icon/avatar-2.png">
+    </ion-avatar>
+    <ion-label>
+      <h2>{{nonStricker.name}}</h2>
+      <!-- <p>Listen, I've had a pretty messed up day...</p> -->
+    </ion-label>
+
+  </ion-row>
+  <ion-row>
+    <h6>Bowler</h6>
+
+    <ion-avatar slot="start">
+      <img src="assets/icon/players-icon/avatar-3.png">
+    </ion-avatar>
+    <ion-label>
+      <h2>{{openingBowler.name}}</h2>
+      <!-- <p>Listen, I've had a pretty messed up day...</p> -->
+    </ion-label>
+
+  </ion-row>
+  <ion-row>
+      
+      <ion-button (click)="openingPlayersMatchDetails()">Prepared</ion-button>
+      
+  </ion-row>
+
+</ion-content>

@@ -1,0 +1,69 @@
+
+<ion-header>
+  <ion-toolbar style = "height: 33px;">
+    <ion-title style = "font-size: small; margin-bottom: 6%;">Extras + Runs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="font-size:12px;">
+
+  <ion-row>
+      <ion-card style="width:100%">
+      <ion-card-header>
+          <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+          <ion-card-title>Total Extra + runs</ion-card-title>
+        </ion-card-header>
+    
+        <ion-card-content>
+            <ion-item style="font-size: x-large;">
+              <ion-input type="text" value="{{this.extra}}{{this.totalResult}}{{this.runs}}"></ion-input>
+            </ion-item>
+            <ion-button (click)='clearResult()'>clear</ion-button>
+              <ion-button (click) = 'submit()'>submit</ion-button>
+            
+            </ion-card-content>
+    
+    <!-- <div style="border: 1px solid grey;">
+    {{this.totalResult}}
+  </div>
+  <div>
+    <ion-button>done</ion-button>
+  </div> -->
+</ion-card>
+  </ion-row>
+  <ion-row>
+    <ion-col size='5'>
+      <ion-button (click)="result1('wd')">Wide</ion-button>
+      <ion-button (click)="result1('nb')">No Ball</ion-button>
+      <ion-button (click)="result1('b')">Bye</ion-button>
+      <ion-button (click)="result1('lb')">Leg bye</ion-button>
+    </ion-col>
+    <ion-col size='2'>
+      <ion-button (click)="result4('+')" [disabled] = "addDisable">+</ion-button>
+      </ion-col>
+    <ion-col size='5'>
+      <ion-row>
+      <ion-button (click)="result2('0')" [disabled] = "firstDisplayDisabled">.</ion-button>
+      <ion-button (click)="result2('1')" [disabled] = "firstDisplayDisabled">1</ion-button>
+      <ion-button (click)="result2('2')" [disabled] = "firstDisplayDisabled">2</ion-button>
+      <ion-button (click)="result2('3')" [disabled] = "firstDisplayDisabled">3</ion-button>
+      <ion-button (click)="result2('4')" [disabled] = "firstDisplayDisabled">4</ion-button>
+      <ion-button (click)="result2('6')" [disabled] = "firstDisplayDisabled">6</ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-button (click)="result5('+')" [disabled] = "secondAddDisabled">+</ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-button (click)="result3('1')" [disabled] = "secondDisplayDisable">1</ion-button>
+      <ion-button (click)="result3('2')" [disabled] = "secondDisplayDisable">2</ion-button>
+      <ion-button (click)="result3('3')" [disabled] = "secondDisplayDisable">3</ion-button>
+      <ion-button (click)="result3('4')" [disabled] = "secondDisplayDisable">4</ion-button>
+      <ion-button (click)="result3('6')" [disabled] = "secondDisplayDisable">6</ion-button>
+    </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-button (click)="back()">back</ion-button>
+  </ion-row>
+</ion-content>

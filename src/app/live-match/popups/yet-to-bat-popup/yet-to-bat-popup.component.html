@@ -1,0 +1,22 @@
+<div style="overflow:auto">
+<ion-grid>
+  <ion-row>
+    <ion-col *ngFor='let player of players; index as i' size="6">
+      <ion-card class="welcome-card" (click) = 'selectedBatsman(player)'>
+
+        <img src="/assets/icon/players-icon/avatar-1.png" alt="" style="width: 100%; margin: 2% auto;border-radius:50%;" />
+
+        <ion-card-header>
+          <!-- <ion-card-subtitle>Get Started</ion-card-subtitle> -->
+          <ion-card-title style="text-align: center;">{{player.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>Innings : {{player.innings}}</p>
+            <p>Runs : {{player.runs}}</p>
+            <p>Strike rate : {{player.strikeRate}}</p>
+          </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</div>
